@@ -13,7 +13,7 @@ function PoW:OnInitialize()
     frame:SetWidth(GetNumTalentTabs() * 300)
     frame:Hide();
 
-    self.frame = PoWPlayerTalentFrame;
+    self.frame = frame;
     self.ogHandlers = nil;
     -- self:SetBackdrop();
 end
@@ -41,7 +41,7 @@ function PoW:MuteBlizzSounds()
     self.ogHandlers = originalHandlers;
 end
 
-function PoW:SetBackdrop()
+function PoW:PrintTalentInfo()
     local name, _, pointsSpent, fileName = GetTalentTabInfo(2);
     local base;
 
@@ -55,7 +55,7 @@ function PoW:SetBackdrop()
     self:Print("Name: ", name);
     self:Print("pointsSpent: ", pointsSpent);
     self:Print("fileName: ", base);
-    self.frame:SetBackdrop({bgFile = base .. 'TopLeft'})
+    -- self.frame:SetBackdrop({bgFile = base .. 'TopLeft'})
 end
 
 function PoW:ToggleTalentFrame()
@@ -69,6 +69,7 @@ function PoW:ToggleTalentFrame()
         self.frame:Hide();
     else
         PlaySound(SOUNDKIT.TALENT_SCREEN_OPEN);
+        self:PrintTalentInfo();
         self.frame:Show();
     end
 end
