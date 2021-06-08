@@ -1,0 +1,9 @@
+## Interface: 20501
+## Title: Path of Warcraft
+## Notes: Manage your talents in |c005539CCstyle
+## Author: Foulleaf
+## Version: 1.0.0
+
+main.lua
+libs.xml
+talentFrame.xml

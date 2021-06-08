@@ -1,0 +1,344 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+..\..\FrameXML\UI.xsd">
+  <!-- <Script file="Blizzard_TalentUI.lua"/> -->
+  <Frame name="PoWPlayerTalentFrame" enableMouse="true" toplevel="true" parent="UIParent" hidden="true">
+    <Size>
+      <AbsDimension x="384" y="512"/>
+    </Size>
+    <Anchors>
+      <Anchor point="TOPLEFT">
+        <Offset>
+          <AbsDimension x="0" y="-104"/>
+        </Offset>
+      </Anchor>
+    </Anchors>
+    <HitRectInsets>
+      <AbsInset left="0" right="30" top="0" bottom="75"/>
+    </HitRectInsets>
+    <Layers>
+      <Layer level="BACKGROUND">
+        <Texture name="PoWPlayerTalentFramePortrait">
+          <Size>
+            <AbsDimension x="60" y="60"/>
+          </Size>
+          <Anchors>
+            <Anchor point="TOPLEFT">
+              <Offset>
+                <AbsDimension x="7" y="-6"/>
+              </Offset>
+            </Anchor>
+          </Anchors>
+        </Texture>
+      </Layer>
+      <Layer level="BORDER">
+        <Texture file="Interface\TalentFrame\UI-TalentFrame-BotLeft">
+          <Size>
+            <AbsDimension x="256" y="256"/>
+          </Size>
+          <Anchors>
+            <Anchor point="BOTTOMLEFT">
+              <Offset>
+                <AbsDimension x="2" y="-1"/>
+              </Offset>
+            </Anchor>
+          </Anchors>
+        </Texture>
+        <Texture file="Interface\TalentFrame\UI-TalentFrame-BotRight">
+          <Size>
+            <AbsDimension x="128" y="256"/>
+          </Size>
+          <Anchors>
+            <Anchor point="BOTTOMRIGHT">
+              <Offset>
+                <AbsDimension x="2" y="-1"/>
+              </Offset>
+            </Anchor>
+          </Anchors>
+        </Texture>
+      </Layer>
+      <Layer level="ARTWORK">
+        <Texture name="PoWPlayerTalentFrameBackgroundTopLeft">
+          <Size>
+            <AbsDimension x="256" y="256"/>
+          </Size>
+          <Anchors>
+            <Anchor point="TOPLEFT">
+              <Offset>
+                <AbsDimension x="23" y="-77"/>
+              </Offset>
+            </Anchor>
+          </Anchors>
+        </Texture>
+        <Texture name="PoWPlayerTalentFrameBackgroundTopRight">
+          <Size>
+            <AbsDimension x="64" y="256"/>
+          </Size>
+          <Anchors>
+            <Anchor point="TOPLEFT" relativeTo="PoWPlayerTalentFrameBackgroundTopLeft" relativePoint="TOPRIGHT">
+              <Offset>
+                <AbsDimension x="0" y="0"/>
+              </Offset>
+            </Anchor>
+          </Anchors>
+        </Texture>
+        <Texture name="PoWPlayerTalentFrameBackgroundBottomLeft">
+          <Size>
+            <AbsDimension x="256" y="128"/>
+          </Size>
+          <Anchors>
+            <Anchor point="TOPLEFT" relativeTo="PoWPlayerTalentFrameBackgroundTopLeft" relativePoint="BOTTOMLEFT">
+              <Offset>
+                <AbsDimension x="0" y="0"/>
+              </Offset>
+            </Anchor>
+          </Anchors>
+        </Texture>
+        <Texture name="PoWPlayerTalentFrameBackgroundBottomRight">
+          <Size>
+            <AbsDimension x="64" y="128"/>
+          </Size>
+          <Anchors>
+            <Anchor point="TOPLEFT" relativeTo="PoWPlayerTalentFrameBackgroundTopLeft" relativePoint="BOTTOMRIGHT">
+              <Offset>
+                <AbsDimension x="0" y="0"/>
+              </Offset>
+            </Anchor>
+          </Anchors>
+        </Texture>
+      </Layer>
+      <Layer level="OVERLAY">
+        <FontString name="PoWPlayerTalentFrameTitleText" inherits="GameFontNormal" text="TALENTS">
+          <Anchors>
+            <Anchor point="TOP">
+              <Offset>
+                <AbsDimension x="0" y="-16"/>
+              </Offset>
+            </Anchor>
+          </Anchors>
+        </FontString>
+        <Texture name="PoWPlayerTalentFramePointsLeft" file="Interface\Common\Common-Input-Border">
+          <Size>
+            <AbsDimension x="8" y="20"/>
+          </Size>
+          <Anchors>
+            <Anchor point="TOPLEFT" relativeTo="PoWPlayerTalentFrame">
+              <Offset>
+                <AbsDimension x="75" y="-48"/>
+              </Offset>
+            </Anchor>
+          </Anchors>
+          <TexCoords left="0" right="0.0625" top="0" bottom="0.625"/>
+        </Texture>
+        <Texture name="PoWPlayerTalentFramePointsMiddle" file="Interface\Common\Common-Input-Border">
+          <Size>
+            <AbsDimension x="248" y="20"/>
+          </Size>
+          <Anchors>
+            <Anchor point="LEFT" relativeTo="PoWPlayerTalentFramePointsLeft" relativePoint="RIGHT"/>
+          </Anchors>
+          <TexCoords left="0.0625" right="0.9375" top="0" bottom="0.625"/>
+        </Texture>
+        <Texture name="PoWPlayerTalentFramePointsRight" file="Interface\Common\Common-Input-Border">
+          <Size>
+            <AbsDimension x="8" y="20"/>
+          </Size>
+          <Anchors>
+            <Anchor point="LEFT" relativeTo="PoWPlayerTalentFramePointsMiddle" relativePoint="RIGHT"/>
+          </Anchors>
+          <TexCoords left="0.9375" right="1.0" top="0" bottom="0.625"/>
+        </Texture>
+        <FontString name="PoWPlayerTalentFrameSpentPoints" inherits="GameFontNormalSmall">
+          <Anchors>
+            <Anchor point="TOP" relativeTo="PoWPlayerTalentFramePointsMiddle">
+              <Offset>
+                <AbsDimension x="0" y="-5"/>
+              </Offset>
+            </Anchor>
+          </Anchors>
+        </FontString>
+        <FontString name="PoWPlayerTalentFrameTalentPointsText" inherits="GameFontHighlightSmall">
+          <Anchors>
+            <Anchor point="BOTTOMRIGHT" relativePoint="BOTTOMLEFT">
+              <Offset>
+                <AbsDimension x="252" y="87"/>
+              </Offset>
+            </Anchor>
+          </Anchors>
+        </FontString>
+        <FontString name="PoWPlayerTalentFrameTalentPoints" inherits="GameFontNormalSmall" text="CHARACTER_POINTS1_COLON">
+          <Anchors>
+            <Anchor point="RIGHT" relativeTo="PoWPlayerTalentFrameTalentPointsText" relativePoint="LEFT">
+              <Offset>
+                <AbsDimension x="-3" y="0"/>
+              </Offset>
+            </Anchor>
+          </Anchors>
+        </FontString>
+      </Layer>
+    </Layers>
+    <Frames>
+      <Button name="PoWPlayerTalentFrameCloseButton" inherits="UIPanelCloseButton">
+        <Anchors>
+          <Anchor point="CENTER" relativePoint="TOPRIGHT">
+            <Offset>
+              <AbsDimension x="-44" y="-25"/>
+            </Offset>
+          </Anchor>
+        </Anchors>
+      </Button>
+      <Button name="PoWPlayerTalentFrameCancelButton" inherits="UIPanelButtonTemplate" text="CLOSE">
+        <Size>
+          <AbsDimension x="80" y="22"/>
+        </Size>
+        <Anchors>
+          <Anchor point="CENTER" relativePoint="TOPLEFT">
+            <Offset>
+              <AbsDimension x="305" y="-420"/>
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <Scripts>
+          <OnClick>
+						HideUIPanel(self:GetParent());
+          </OnClick>
+        </Scripts>
+      </Button>
+      <ScrollFrame name="PoWPlayerTalentFrameScrollFrame" inherits="UIPanelScrollFrameTemplate">
+        <Size>
+          <AbsDimension x="296" y="332"/>
+        </Size>
+        <Anchors>
+          <Anchor point="TOPRIGHT">
+            <Offset>
+              <AbsDimension x="-65" y="-77"/>
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <ScrollChild>
+          <Frame name="PoWPlayerTalentFrameScrollChildFrame">
+            <Size>
+              <AbsDimension x="320" y="50"/>
+            </Size>
+            <Anchors>
+              <Anchor point="TOPLEFT"/>
+            </Anchors>
+            <Layers>
+              <Layer level="BACKGROUND">
+                <Texture name="PoWPlayerTalentFrameBranch1" inherits="TalentBranchTemplate"/>
+                <Texture name="PoWPlayerTalentFrameBranch2" inherits="TalentBranchTemplate"/>
+                <Texture name="PoWPlayerTalentFrameBranch3" inherits="TalentBranchTemplate"/>
+                <Texture name="PoWPlayerTalentFrameBranch4" inherits="TalentBranchTemplate"/>
+                <Texture name="PoWPlayerTalentFrameBranch5" inherits="TalentBranchTemplate"/>
+                <Texture name="PoWPlayerTalentFrameBranch6" inherits="TalentBranchTemplate"/>
+                <Texture name="PoWPlayerTalentFrameBranch7" inherits="TalentBranchTemplate"/>
+                <Texture name="PoWPlayerTalentFrameBranch8" inherits="TalentBranchTemplate"/>
+                <Texture name="PoWPlayerTalentFrameBranch9" inherits="TalentBranchTemplate"/>
+                <Texture name="PoWPlayerTalentFrameBranch10" inherits="TalentBranchTemplate"/>
+                <Texture name="PoWPlayerTalentFrameBranch11" inherits="TalentBranchTemplate"/>
+                <Texture name="PoWPlayerTalentFrameBranch12" inherits="TalentBranchTemplate"/>
+                <Texture name="PoWPlayerTalentFrameBranch13" inherits="TalentBranchTemplate"/>
+                <Texture name="PoWPlayerTalentFrameBranch14" inherits="TalentBranchTemplate"/>
+                <Texture name="PoWPlayerTalentFrameBranch15" inherits="TalentBranchTemplate"/>
+                <Texture name="PoWPlayerTalentFrameBranch16" inherits="TalentBranchTemplate"/>
+                <Texture name="PoWPlayerTalentFrameBranch17" inherits="TalentBranchTemplate"/>
+                <Texture name="PoWPlayerTalentFrameBranch18" inherits="TalentBranchTemplate"/>
+                <Texture name="PoWPlayerTalentFrameBranch19" inherits="TalentBranchTemplate"/>
+                <Texture name="PoWPlayerTalentFrameBranch20" inherits="TalentBranchTemplate"/>
+                <Texture name="PoWPlayerTalentFrameBranch21" inherits="TalentBranchTemplate"/>
+                <Texture name="PoWPlayerTalentFrameBranch22" inherits="TalentBranchTemplate"/>
+                <Texture name="PoWPlayerTalentFrameBranch23" inherits="TalentBranchTemplate"/>
+                <Texture name="PoWPlayerTalentFrameBranch24" inherits="TalentBranchTemplate"/>
+                <Texture name="PoWPlayerTalentFrameBranch25" inherits="TalentBranchTemplate"/>
+                <Texture name="PoWPlayerTalentFrameBranch26" inherits="TalentBranchTemplate"/>
+                <Texture name="PoWPlayerTalentFrameBranch27" inherits="TalentBranchTemplate"/>
+                <Texture name="PoWPlayerTalentFrameBranch28" inherits="TalentBranchTemplate"/>
+                <Texture name="PoWPlayerTalentFrameBranch29" inherits="TalentBranchTemplate"/>
+                <Texture name="PoWPlayerTalentFrameBranch30" inherits="TalentBranchTemplate"/>
+              </Layer>
+            </Layers>
+            <Frames>
+              <Button name="PoWPlayerTalentFrameTalent1" inherits="TalentButtonTemplate" id="1"/>
+              <Button name="PoWPlayerTalentFrameTalent2" inherits="TalentButtonTemplate" id="2"/>
+              <Button name="PoWPlayerTalentFrameTalent3" inherits="TalentButtonTemplate" id="3"/>
+              <Button name="PoWPlayerTalentFrameTalent4" inherits="TalentButtonTemplate" id="4"/>
+              <Button name="PoWPlayerTalentFrameTalent5" inherits="TalentButtonTemplate" id="5"/>
+              <Button name="PoWPlayerTalentFrameTalent6" inherits="TalentButtonTemplate" id="6"/>
+              <Button name="PoWPlayerTalentFrameTalent7" inherits="TalentButtonTemplate" id="7"/>
+              <Button name="PoWPlayerTalentFrameTalent8" inherits="TalentButtonTemplate" id="8"/>
+              <Button name="PoWPlayerTalentFrameTalent9" inherits="TalentButtonTemplate" id="9"/>
+              <Button name="PoWPlayerTalentFrameTalent10" inherits="TalentButtonTemplate" id="10"/>
+              <Button name="PoWPlayerTalentFrameTalent11" inherits="TalentButtonTemplate" id="11"/>
+              <Button name="PoWPlayerTalentFrameTalent12" inherits="TalentButtonTemplate" id="12"/>
+              <Button name="PoWPlayerTalentFrameTalent13" inherits="TalentButtonTemplate" id="13"/>
+              <Button name="PoWPlayerTalentFrameTalent14" inherits="TalentButtonTemplate" id="14"/>
+              <Button name="PoWPlayerTalentFrameTalent15" inherits="TalentButtonTemplate" id="15"/>
+              <Button name="PoWPlayerTalentFrameTalent16" inherits="TalentButtonTemplate" id="16"/>
+              <Button name="PoWPlayerTalentFrameTalent17" inherits="TalentButtonTemplate" id="17"/>
+              <Button name="PoWPlayerTalentFrameTalent18" inherits="TalentButtonTemplate" id="18"/>
+              <Button name="PoWPlayerTalentFrameTalent19" inherits="TalentButtonTemplate" id="19"/>
+              <Button name="PoWPlayerTalentFrameTalent20" inherits="TalentButtonTemplate" id="20"/>
+              <Button name="PoWPlayerTalentFrameTalent21" inherits="TalentButtonTemplate" id="21"/>
+              <Button name="PoWPlayerTalentFrameTalent22" inherits="TalentButtonTemplate" id="22"/>
+              <Button name="PoWPlayerTalentFrameTalent23" inherits="TalentButtonTemplate" id="23"/>
+              <Button name="PoWPlayerTalentFrameTalent24" inherits="TalentButtonTemplate" id="24"/>
+              <Button name="PoWPlayerTalentFrameTalent25" inherits="TalentButtonTemplate" id="25"/>
+              <Button name="PoWPlayerTalentFrameTalent26" inherits="TalentButtonTemplate" id="26"/>
+              <Button name="PoWPlayerTalentFrameTalent27" inherits="TalentButtonTemplate" id="27"/>
+              <Button name="PoWPlayerTalentFrameTalent28" inherits="TalentButtonTemplate" id="28"/>
+              <Button name="PoWPlayerTalentFrameTalent29" inherits="TalentButtonTemplate" id="29"/>
+              <Button name="PoWPlayerTalentFrameTalent30" inherits="TalentButtonTemplate" id="30"/>
+              <Button name="PoWPlayerTalentFrameTalent31" inherits="TalentButtonTemplate" id="31"/>
+              <Button name="PoWPlayerTalentFrameTalent32" inherits="TalentButtonTemplate" id="32"/>
+              <Button name="PoWPlayerTalentFrameTalent33" inherits="TalentButtonTemplate" id="33"/>
+              <Button name="PoWPlayerTalentFrameTalent34" inherits="TalentButtonTemplate" id="34"/>
+              <Button name="PoWPlayerTalentFrameTalent35" inherits="TalentButtonTemplate" id="35"/>
+              <Button name="PoWPlayerTalentFrameTalent36" inherits="TalentButtonTemplate" id="36"/>
+              <Button name="PoWPlayerTalentFrameTalent37" inherits="TalentButtonTemplate" id="37"/>
+              <Button name="PoWPlayerTalentFrameTalent38" inherits="TalentButtonTemplate" id="38"/>
+              <Button name="PoWPlayerTalentFrameTalent39" inherits="TalentButtonTemplate" id="39"/>
+              <Button name="PoWPlayerTalentFrameTalent40" inherits="TalentButtonTemplate" id="40"/>
+
+              <Frame name="PoWPlayerTalentFrameArrowFrame" setAllPoints="true">
+                <Layers>
+                  <Layer level="OVERLAY">
+                    <Texture name="PoWPlayerTalentFrameArrow1" inherits="TalentArrowTemplate"/>
+                    <Texture name="PoWPlayerTalentFrameArrow2" inherits="TalentArrowTemplate"/>
+                    <Texture name="PoWPlayerTalentFrameArrow3" inherits="TalentArrowTemplate"/>
+                    <Texture name="PoWPlayerTalentFrameArrow4" inherits="TalentArrowTemplate"/>
+                    <Texture name="PoWPlayerTalentFrameArrow5" inherits="TalentArrowTemplate"/>
+                    <Texture name="PoWPlayerTalentFrameArrow6" inherits="TalentArrowTemplate"/>
+                    <Texture name="PoWPlayerTalentFrameArrow7" inherits="TalentArrowTemplate"/>
+                    <Texture name="PoWPlayerTalentFrameArrow8" inherits="TalentArrowTemplate"/>
+                    <Texture name="PoWPlayerTalentFrameArrow9" inherits="TalentArrowTemplate"/>
+                    <Texture name="PoWPlayerTalentFrameArrow10" inherits="TalentArrowTemplate"/>
+                    <Texture name="PoWPlayerTalentFrameArrow11" inherits="TalentArrowTemplate"/>
+                    <Texture name="PoWPlayerTalentFrameArrow12" inherits="TalentArrowTemplate"/>
+                    <Texture name="PoWPlayerTalentFrameArrow13" inherits="TalentArrowTemplate"/>
+                    <Texture name="PoWPlayerTalentFrameArrow14" inherits="TalentArrowTemplate"/>
+                    <Texture name="PoWPlayerTalentFrameArrow15" inherits="TalentArrowTemplate"/>
+                    <Texture name="PoWPlayerTalentFrameArrow16" inherits="TalentArrowTemplate"/>
+                    <Texture name="PoWPlayerTalentFrameArrow17" inherits="TalentArrowTemplate"/>
+                    <Texture name="PoWPlayerTalentFrameArrow18" inherits="TalentArrowTemplate"/>
+                    <Texture name="PoWPlayerTalentFrameArrow19" inherits="TalentArrowTemplate"/>
+                    <Texture name="PoWPlayerTalentFrameArrow20" inherits="TalentArrowTemplate"/>
+                    <Texture name="PoWPlayerTalentFrameArrow21" inherits="TalentArrowTemplate"/>
+                    <Texture name="PoWPlayerTalentFrameArrow22" inherits="TalentArrowTemplate"/>
+                    <Texture name="PoWPlayerTalentFrameArrow23" inherits="TalentArrowTemplate"/>
+                    <Texture name="PoWPlayerTalentFrameArrow24" inherits="TalentArrowTemplate"/>
+                    <Texture name="PoWPlayerTalentFrameArrow25" inherits="TalentArrowTemplate"/>
+                    <Texture name="PoWPlayerTalentFrameArrow26" inherits="TalentArrowTemplate"/>
+                    <Texture name="PoWPlayerTalentFrameArrow27" inherits="TalentArrowTemplate"/>
+                    <Texture name="PoWPlayerTalentFrameArrow28" inherits="TalentArrowTemplate"/>
+                    <Texture name="PoWPlayerTalentFrameArrow29" inherits="TalentArrowTemplate"/>
+                    <Texture name="PoWPlayerTalentFrameArrow30" inherits="TalentArrowTemplate"/>
+                  </Layer>
+                </Layers>
+              </Frame>
+            </Frames>
+          </Frame>
+        </ScrollChild>
+      </ScrollFrame>
+    </Frames>
+  </Frame>
+</Ui>
